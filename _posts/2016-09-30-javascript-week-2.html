@@ -1,0 +1,126 @@
+---
+title: JavaScript Week 2
+layout: default
+author: David Klein
+date: 2016-09-30
+---
+
+<section class="center mw6 pl3 pr3 pl0-ns pr0-ns pb4 pb6-ns pt4 pt6-ns">
+   <h1 class="f4 f3-ns lh-copy mb0">
+      {{ page.title }}
+   </h1>
+   <date class="db i black-30 pb4" datetime="{{post.date}}">{{ page.date | date_to_long_string }}</date>
+   <p class="lh-copy">
+      Life update: I'm taking a Javascript course at <a href="https://generalassemb.ly/education/javascript-development" class="link black underline">General Assembly</a>. It's about time, right? Below is some code I wrote to pick apart a large array of numbers.
+   </p>
+   <pre>
+      <code class="ml0 pl0 f6 lh-solid">
+// 1. What's the max number?
+// UPDATE: @ljharb correctly pointed out that my solution does not work
+// for negative numbers. I changed the algorithm so max is initially set
+// to be the first value in the array, and the form loop begins at the
+// second value in the array. Thanks, pal.
+var max = a[0];
+for (var i = 1; i < a.length; i++) {
+   if(a[i] > max) {
+      max = a[i];
+   }
+}
+console.log("max number is " + max);
+
+
+// 2. What's the sum of all the numbers?
+var sum = 0;
+for (var i = 0; i < a.length; i++) {
+   sum = sum + a[i];
+}
+console.log("sum: " + sum);
+
+
+// 3. Which numbers are between 50 and 100?
+var numbers = [];
+for (var i = 0; i < a.length; i++) {
+   if (a[i] > 50 && a[i] < 100) {
+      numbers.push(a[i]);
+   }
+}
+console.log("numbers between 50 and 100: " + numbers);
+
+
+// 4. How many numbers greater than 500?
+var greaterThan500 = 0;
+for (var i = 0; i < a.length; i++) {
+   if (a[i] > 500) {
+      greaterThan500++;
+   }
+}
+console.log("numbers greater than 500: " + greaterThan500);
+
+
+// 5. How many even numbers?
+var even = [];
+for (var i = 0; i < a.length; i++) {
+   if ((a[i] % 2) == 0) {
+      even.push(a[i]);
+   }
+}
+console.log("even numbers: " + even.length);
+
+
+// 6. How many odd numbers?
+var odd = 0;
+for (var i = 0; i < a.length; i++) {
+   if ((a[i] % 2) == 1) {
+      odd++;
+   }
+}
+console.log("odd numbers: " + odd);
+
+
+// 7. What's the largest even number?
+var maxEven = 0;
+for (var i = 0; i < a.length; i++) {
+   if ((a[i] % 2) == 0) {
+      if(a[i] > maxEven) {
+         maxEven = a[i];
+      }
+   }
+}
+console.log("max even is " + maxEven);
+
+
+// 8. How many numbers, whose sum of digits is greater than 10?
+var breakApart;
+var greaterThan10 = 0;
+for (var i = 0; i < a.length; i++) {
+   breakApart = a[i].toString()
+   breakApart = breakApart.split("");
+   var sumOfValue = 0;
+   for (var j = 0; j < breakApart.length; j++) {
+      sumOfValue += parseInt(breakApart[j]);
+   }
+
+   if (sumOfValue > 10) {
+      greaterThan10++;
+   }
+}
+
+a.forEach(findSum);
+
+function findSum(item) {
+   var digits = item.toString();
+   digits = digits.split("");
+   var sumOfDigits = 0;
+   digits.forEach(addDigits);
+   function addDigits(item) {
+      sumOfDigits = sumOfDigits + parseInt(item);
+   }
+
+if (sumOfDigits > 10) {
+      greaterThan10++;
+   }
+}
+console.log("greater than 50: " + greaterThan10);
+      </code>
+   </pre>
+</section>

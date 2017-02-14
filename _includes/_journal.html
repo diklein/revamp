@@ -1,0 +1,13 @@
+<section class="center mw6 pl2 pr3 pl0-ns pr0-ns pb4 pb6-ns pt5 pt6-ns lh-copy">
+   <!-- <h1 class="f4 pt0 pb0 pb4-ns pt5-ns f4-ns lh-copy center">
+      Journal
+   </h1> -->
+    {% for post in site.posts %}
+      <li class="list pb4">
+        <a href="{{ post.url }}" title="{{post.title}}" class="no-underline black lh-copy">
+          <span class="f4">{{ post.title }}</span>
+        </a>
+        <date class="db i black-30" datetime="{{post.date}}">{{ post.date | date_to_long_string }}</date>
+      </li>
+    {% endfor %}
+</section>

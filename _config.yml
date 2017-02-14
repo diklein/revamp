@@ -1,10 +1,10 @@
 # This will be the first part of the title tag for your site <title> site.name + page.title </title>
-name: "JKL"
+name: "David Klein · Freshly Ground Design"
 # Populates the meta description for the site. Should be under 150 characters for best SEO purposes.
-descripiton: "Light-weight scaffolding for a Jekyll project with Tachyons"
+descripiton: "David Klein, a designer in San Francisco who loves coffee"
 
 # Owner (organization or individual) of site content
-author: "mrmrs"
+author: "diklein"
 
 #url: http://
 url: "http://localhost:4000"
@@ -14,7 +14,7 @@ url: "http://localhost:4000"
 googleID:
 
 # Pagination variable for how many posts to show in a list
-paginate: 5
+# paginate: 5
 
 # Style of permalinks
 permalink: pretty

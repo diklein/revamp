@@ -1,0 +1,14 @@
+<script>
+   var journalLink = document.querySelector("#journal-link");
+   var portfolioLink = document.querySelector("#portfolio-link");
+   var libraryLink = document.querySelector("#library-link");
+   // console.log("{{ page.title }}");
+   var title = "{{ page.title }}";
+   if (title == "Journal") {
+      journalLink.className += " orange";
+   } else if (title == "Portfolio") {
+      portfolioLink.className += " orange";
+   } else if (title == "Library") {
+      libraryLink.className += " orange";
+   }
+</script>
