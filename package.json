@@ -15,8 +15,7 @@
   ],
   "author": "diklein",
   "license": "MIT",
-  "bugs": {
-  },
+  "bugs": {},
   "devDependencies": {
     "browser-sync": "^1.1.1",
     "css": "^2.1.0",
@@ -37,10 +36,12 @@
     "lodash": "^2.4.1",
     "node-sass": "^0.9"
   },
-  "contributors": [
-  ],
+  "contributors": [],
   "scripts": {
     "start": "gulp",
     "ast": "gulp generateDocs"
+  },
+  "dependencies": {
+    "purify-css": "^1.1.9"
   }
 }
