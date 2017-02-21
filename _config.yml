@@ -28,3 +28,6 @@ permalink: pretty
 #pygments: true
 
 exclude: [Rakefile]
+
+sass:
+    style: compressed
