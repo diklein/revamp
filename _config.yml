@@ -32,4 +32,4 @@ exclude: [Rakefile]
 sass:
     style: compressed
 
-gems: [jekyll-admin]
+# gems: [jekyll-admin]
