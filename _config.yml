@@ -31,3 +31,5 @@ exclude: [Rakefile]
 
 sass:
     style: compressed
+
+gems: [jekyll-admin]
