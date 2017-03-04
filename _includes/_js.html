@@ -3,9 +3,10 @@
    var portfolioLink = document.querySelector("#portfolio-link");
    var libraryLink = document.querySelector("#library-link");
    var title = "{{ page.title }}";
-   if (title == "Journal") {
+   var tag = "{{ page.tag }}";
+   if (title == "Journal" || tag == "journal") {
       journalLink.className += " selected-on-page";
-   } else if (title == "Portfolio") {
+   } else if (title == "Portfolio" || tag == "portfolio") {
       portfolioLink.className += " selected-on-page";
    } else if (title == "Library") {
       libraryLink.className += " selected-on-page";
