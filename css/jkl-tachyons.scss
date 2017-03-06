@@ -2984,6 +2984,11 @@ hr {
    height:1px;
    background:#ccc
 }
+.selected-on-page {
+   padding-bottom: 32px;
+   border-bottom: 1px solid black
+}
+
 @media screen and (min-width: 30em) {
    .selected-on-page {
       padding-bottom: 37px;
