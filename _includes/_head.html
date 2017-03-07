@@ -2,10 +2,18 @@
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <title>
-    {{ page.title }}
+    {{ page.title }} · {{ site.name}}
   </title>
   <meta name="author" content="{{site.author}}">
-  <meta name="description" content="{{site.description}}">
+  <meta name="description" content="David Klein — a designer in San Francisco who loves coffee">
+  <meta property="og:image" content="https://diklein.imgix.net/headshot50.jpg">
+  <meta property="og:title" content="{{ page.title | xml_escape }}"/>
+  <meta property="og:type" content="{% if page.is_post %}article{% else %}website{% endif %}" />
+  <meta property="og:site_name" content="{{ site.name | xml_escape }}"/>
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+  {% if page.layout == 'default' %}
+  <meta property="og:description" content="{{ page.content | strip_html | lstrip | truncatewords: 50 }}"/>
+  {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{site.url}}/css/jkl-tachyons.css">
 </head>
