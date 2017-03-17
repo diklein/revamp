@@ -32,12 +32,12 @@
 * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
 */
 html {
-   /*font-family: Benton Sans; /* 1 */
-   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;
+   font-family: Benton Sans;
+   // font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;
    overflow-y:scroll;
 }
 
-/*@font-face {
+@font-face {
    font-family: 'Benton Sans';
    src: url('../fonts/Benton-Sans-Regular.eot');
    src: url('../fonts/Benton-Sans-Regular.ttf')  format('truetype');
@@ -56,7 +56,7 @@ html {
    src: url('../fonts/Benton-Sans-Italic.otf');
    font-weight: normal;
    font-style: italic;
-}*/
+}
 
 
 
@@ -796,7 +796,7 @@ Media Query Extensions:
 
 */
 .normal { font-weight: normal; }
-.b { font-weight: bold; }
+.b { font-weight: bold; color: #333 }
 .fw1 { font-weight: 100; }
 .fw2 { font-weight: 200; }
 .fw3 { font-weight: 300; }
@@ -2981,8 +2981,8 @@ code {
 }
 hr {
    border:0;
-   height:1px;
-   background:#ccc
+   height:2px;
+   background:#f4f4f4
 }
 .selected-on-page {
    padding-bottom: 31px;
