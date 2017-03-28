@@ -1,6 +1,6 @@
 ---
 title: Jelly
-layout: default
+layout: posts
 author: David Klein
 date: 2016-05-12
 tag: journal
@@ -10,8 +10,8 @@ tag: journal
    <!-- <img src="https://diklein.imgix.net/jelly.jpg?auto=format" alt="Jelly icon" /> -->
    <img src="/img/jelly.jpg" alt="Jelly icon" />
 </section>
-<section class="center mw6 pl3 pr3 pl0-ns pr0-ns pb4 lh-copy black-80">
-   <h1 class="f4 f3-ns lh-copy mb0 pt4">
+<section class="center mw6 pl3 pr3 pl0-ns pr0-ns lh-copy black-80">
+   <h1 class="f4 f3-ns lh-copy mb0 pt4 black-80">
       {{ page.title }}
    </h1>
    <date class="db i black-30 pb4 f5" datetime="{{post.date}}">{{ page.date | date_to_long_string }}</date>
@@ -59,7 +59,7 @@ tag: journal
       </div>
       “From Twitter cofounder Biz Stone comes an app that…” Right away this feels like the app can’t stand on its own, and it needs Biz’s help for promotion.
    </p>
-   <ol class="pl0">
+   <ol class="pl3 pl0-ns">
       <li class="pb3">
          “Jelly is a new kind of search engine.” New how?
       </li>
@@ -406,3 +406,14 @@ I’ll try asking a question in a minute. Also, from now on I’ll say EDS inste
       <a href="/journal" class="no-underline blue">← back to journal</a>
    </div>
 </section>
+
+<!-- <section class="center mw6 pl3 pr3 pl0-ns pr0-ns pb4 pb6-ns pt4-ns lh-copy">
+   {% for post in site.related_posts limit: 1 %}
+      <span class="small-caps black-60">
+         read this next
+      </span>
+       <div>
+          <a href="{{ post.url }}" title="{{post.title}}" class="link underline blue">{{ post.title }}</a>
+       </div>
+   {% endfor %}
+</section> -->
