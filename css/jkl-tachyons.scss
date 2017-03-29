@@ -2974,7 +2974,12 @@ Just tack one of these classes onto a parent element.
    border-bottom: 2px solid grey
 }
 a:hover {
-   color: grey !important
+   color: grey;
+   -webkit-transition: color .15s ease-in;
+   transition: color .15s ease-in;
+}
+a.link.underline.white:hover {
+   color: rgba(255,255,255,0.5)
 }
 code {
    line-height: .8em
@@ -2987,6 +2992,10 @@ hr {
 .selected-on-page {
    padding-bottom: 31px;
    border-bottom: 2px solid black
+}
+
+.hard-margin {
+   margin: 0 auto;
 }
 
 @media screen and (min-width: 30em) {
