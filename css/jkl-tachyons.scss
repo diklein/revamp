@@ -3011,3 +3011,16 @@ hr {
       border-bottom: 2px solid black
    }
 }
+
+img {
+   -webkit-transform: scale(1);
+   transform: scale(1);
+   -webkit-transition: .2s ease-in-out;
+   transition: .2s ease-in-out;
+   overflow: hidden;
+}
+
+.aspect-ratio img:hover {
+   -webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
