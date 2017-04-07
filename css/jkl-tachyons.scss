@@ -101,7 +101,11 @@ template, /* 1 */
 * 1. Remove the gray background on active links in IE 10.
 * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
 */
-a { background-color: transparent; /* 1 */ -webkit-text-decoration-skip: objects; /* 2 */ }
+a {
+   background-color: transparent;
+   -webkit-text-decoration-skip: ink;
+   text-decoration-skip: ink;
+}
 /**
 * Remove the outline on focused links when they are also active or hovered
 * in all browsers (opinionated).
@@ -900,7 +904,7 @@ LINKS
 Docs: http://tachyons.io/docs/elements/links/
 
 */
-.link { text-decoration: none; -webkit-transition: color .15s ease-in; transition: color .15s ease-in; }
+.link { text-decoration: underline; text-decoration-skip: ink; -webkit-transition: color .15s ease-in; transition: color .15s ease-in; }
 .link:link, .link:visited { -webkit-transition: color .15s ease-in; transition: color .15s ease-in; }
 .link:hover { -webkit-transition: color .15s ease-in; transition: color .15s ease-in; }
 .link:active { -webkit-transition: color .15s ease-in; transition: color .15s ease-in; }
@@ -1524,14 +1528,7 @@ Media Query Extensions:
 
 */
 .strike { text-decoration: line-through; }
-.underline { text-decoration: underline; }
-// .underline {
-//    text-decoration: none;
-//    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .6) 50%, rgba(0, 0, 0, 0) 50%);
-//    background-repeat: repeat-x;
-//    background-size: 2px .1em;
-//    background-position: 0 1.07em
-// }
+// .underline { text-decoration-skip: ink; }
 .no-underline { text-decoration: none; }
 /*
 
@@ -3012,15 +3009,15 @@ hr {
    }
 }
 
-img {
-   -webkit-transform: scale(1);
-   transform: scale(1);
-   -webkit-transition: .2s ease-in-out;
-   transition: .2s ease-in-out;
-   overflow: hidden;
-}
-
-.aspect-ratio img:hover {
-   -webkit-transform: scale(1.05);
-	transform: scale(1.05);
-}
+// img {
+//    -webkit-transform: scale(1);
+//    transform: scale(1);
+//    -webkit-transition: .2s ease-in-out;
+//    transition: .2s ease-in-out;
+//    overflow: hidden;
+// }
+//
+// .aspect-ratio img:hover {
+//    -webkit-transform: scale(1.05);
+// 	transform: scale(1.05);
+// }
