@@ -1,15 +1,15 @@
 <script>
    var journalLink = document.querySelector("#journal-link");
    var portfolioLink = document.querySelector("#portfolio-link");
-   var libraryLink = document.querySelector("#library-link");
+   var aboutLink = document.querySelector("#about-link");
    var title = "{{ page.title }}";
    var tag = "{{ page.tag }}";
    if (title == "Journal" || tag == "journal") {
       journalLink.className += " selected-on-page";
    } else if (title == "Portfolio" || tag == "portfolio") {
       portfolioLink.className += " selected-on-page";
-   } else if (title == "Library") {
-      libraryLink.className += " selected-on-page";
+   } else if (title == "About") {
+      aboutLink.className += " selected-on-page";
    }
 
 //    var main = document.querySelector(".main");
