@@ -12,8 +12,8 @@
   <meta property="og:type" content="{% if page.is_post %}article{% else %}website{% endif %}" />
   <meta property="og:site_name" content="{{ site.name | xml_escape }}"/>
   <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
-  {% if page.layout == 'default' %}
-  <meta property="og:description" content="{{ page.content | strip_html | lstrip | truncatewords: 50 }}"/>
+  {% if page.layout == 'posts' %}
+  <meta name="description" content="{{ page.content | strip_html | truncatewords: 50 }}"/>
   {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/img/favicon.ico" />
