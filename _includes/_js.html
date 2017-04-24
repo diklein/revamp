@@ -5,11 +5,32 @@
    var title = "{{ page.title }}";
    var tag = "{{ page.tag }}";
    if (title == "Journal" || tag == "journal") {
-      journalLink.className += " selected-on-page";
+
+      // underline solution
+      // journalLink.className += " selected-on-page";
+
+      // faded solution
+      portfolioLink.className = "no-underline black-30";
+      aboutLink.className = "no-underline black-30";
+
    } else if (title == "Portfolio" || tag == "portfolio") {
-      portfolioLink.className += " selected-on-page";
+
+      // underline solution
+      // portfolioLink.className += " selected-on-page";
+
+      // faded solution
+      journalLink.className = "no-underline black-30";
+      aboutLink.className = "no-underline black-30";
+
    } else if (title == "About") {
-      aboutLink.className += " selected-on-page";
+
+      // underline solution
+      // aboutLink.className += " selected-on-page";
+
+      // faded solution
+      journalLink.className = "no-underline black-30";
+      portfolioLink.className = "no-underline black-30";
+
    }
 
 //    var main = document.querySelector(".main");
