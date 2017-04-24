@@ -2967,16 +2967,7 @@ Just tack one of these classes onto a parent element.
 //    padding-bottom: 33px;
 //    border-bottom: 1px solid black
 // }
-.nav-list a:hover {
-   color:grey;
-   padding-bottom: 37px;
-   border-bottom: 1px solid #999
-}
-.title-link:hover {
-   color: grey;
-   padding-bottom: 32px;
-   border-bottom: 1px solid #999
-}
+
 a:hover {
    color: grey;
    -webkit-transition: color .15s ease-in;
@@ -2984,6 +2975,16 @@ a:hover {
 }
 a.link.underline.white:hover {
    color: rgba(255,255,255,0.5)
+}
+.nav-list a:hover {
+   color: black;
+   padding-bottom: 37px;
+   border-bottom: 1px solid #999
+}
+.title-link:hover {
+   color: black;
+   padding-bottom: 32px;
+   border-bottom: 1px solid #999
 }
 code {
    line-height: .8em
