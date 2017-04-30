@@ -1,0 +1,388 @@
+<section class="pt4 pt5-ns pb3-ns center tc-ns">
+    <!-- <img src="https://diklein.imgix.net/trullo-cover.jpg?auto=format" alt="Trullo logo" width="" /> -->
+    <img src="/img/trullo-cover.jpg" width="1200"/>
+</section>
+<section class="center mw6 pl3 pr3 pl0-ns pr0-ns lh-copy black-80">
+    <h1 class="f2 lh-copy mb0 pt4 black-80">
+        Trullo
+    </h1>
+    <h2 class="f3 fw3 lh-title black-40 mv0">
+        We set out to create the best place to share your opinions on movies, books, and products.
+    </h2>
+    <div class="cf pv3">
+        <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+            <dd class="f6 ml0 small-caps black-60">years</dd>
+            <dd class="f6 fw6 ml0">2014 — 2015</dd>
+        </dl>
+        <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+            <dd class="f6 ml0 small-caps black-60">position</dd>
+            <dd class="f6 fw6 ml0">Head of Design</dd>
+        </dl>
+        <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+            <dd class="f6 ml0 small-caps black-60">project</dd>
+            <dd class="f6 fw6 ml0">iOS App</dd>
+        </dl>
+    </div>
+    <p class="lh-copy">
+        <div class="b pb2 f3">
+            Background
+        </div>
+        We’re always so excited to discuss our favorite movies, books, and products with friends. But there’s a problem: Current social networks cater to posting photos, status updates, and links to a broad audience. We wanted a place for sharing opinions, and chatting about your favorite things.
+    </p>
+</section>
+
+<hr class="center mw6 mv5 mv6-ns"/>
+
+<!-- PROTOTYPE -->
+
+<section class="center mw6 pl3 pr3 pl0-ns pr0-ns lh-copy">
+    <p class="lh-copy">
+        <div class="b pb2 f3">
+            Prototype
+        </div>
+        As the sole designer it was my responsibility to work with the founder and engineer to transform the prototype into a product. It began as a partially responsive web application used primilary to test the core concepts with friends and family. A user could rate and review things, gather purchases from email history, and comment on friends’ activity. It’s interesting to note that the newly-launched version of Trullo maintains these core features.
+    </p>
+    <p class="lh-copy">
+        You’ll notice a theme of movies, books, and products throughout the Trullo story, but in the screenshot below there are several additional categories including restaurants and hotels. After taking a close look at the data and discussing what we’re personally most excited to review and chat about, we made a decision to focus on the three cateogries mentioned above. Honestly, when we weren't designing or coding, we’re probably discussing an upcoming movie, a childhood book, or a fun new gadget.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-prototype.png?auto=format" alt="Trullo prototype" class="mw6 db pt5 pb1 hard-margin" /> -->
+    <img src="/img/trullo-prototype.png" alt="Trullo prototype" class="mw6 db pt5 pb1 hard-margin" />
+    <p class="f6 black-20 tc pb5">
+        The navigation bar was actually blue until you entered debug mode. <br />Only super special people could do that.
+    </p>
+    <p>
+        Building and testing a working prototype is invaluable. It doesn’t have to be beautiful, fast, or pixel-perfect. The goal is to <span class="b">learn</span>.
+    </p>
+    <p class="lh-copy">
+        <div class="b pt4 pb1 f4">
+            Rating
+        </div>
+        We began with three levels for rating a movie, book, or product:
+    </p>
+    <ol class="pl3 pl0-ns">
+        <li class="pb3">
+            No good
+        </li>
+        <li class="pb3">
+            Like
+        </li>
+        <li class="pb2">
+            Love
+        </li>
+    </ol>
+    <p>
+        We hypothesized that three levels (rather than four or five) would be much easier to comprehend, and make the review process quicker. As for the wording we wanted users to convey a feeling and build a story over something more generic like three out of five stars. That’s how we chose Love as the highest option. For people who want to express a subtle approval for an item on Trullo, we chose Like as the middle option. Lastly, as an attempt for differentiation, we included Dislike. Broadcasting that you dislike something that a friend loves is a great way to start a conversation.
+    </p>
+    <p>
+        After talking to early users, we learned that using only three levels was actually constrictive! We failed to notice that this set of words didn’t include a middle “hey it’s just OK” option. The Like middle option still implied that the user actually enjoyed the item. We also considered four levels, but that falls into the same situation: the user is forced to like or dislike every single item. These tests led us back to a five-level rating system with hearts that fill up to indicate how much you love or hate an item.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-hearts-drawing.jpg?auto=format" alt="Trullo hearts drawing" class="mw6 db pt5 pb1 hard-margin" /> -->
+    <img src="/img/trullo-hearts-drawing.jpg" alt="Trullo hearts drawing" class="mw6 db pt5 pb1 hard-margin" width=""/>
+    <p class="f6 black-20 tc pb5">
+        An early drawing of Trullo’s rating hearts by Yuechi Li, a design intern
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-hearts.png?auto=format" alt="Trullo hearts" class="mw6 db pt5 pb1 hard-margin" /> -->
+    <img src="/img/trullo-hearts.png" alt="Trullo hearts" class="mw6 db pt5 pb1 hard-margin" width=""/>
+    <p class="f6 black-20 tc pb5">
+        The final version of Trullo’s rating hearts
+    </p>
+    <p>
+        The corresponding words we settled on were:
+    </p>
+    <ol class="pl3 pl0-ns">
+        <li class="pb3">
+            Hate
+        </li>
+        <li class="pb3">
+            Dislike
+        </li>
+        <li class="pb3">
+            OK
+        </li>
+        <li class="pb3">
+            Like
+        </li>
+        <li class="pb2">
+            Love
+        </li>
+    </ol>
+    <p>
+        The challenge was to find words that work as statements for reviews to be easily browsed. Instead of using “Alison rated Trainwreck with three stars” or “Alison reviewed Trainwreck as loved it,” we chose a more simple structure:
+    </p>
+    <ul class="pl3 pl0-ns">
+        <li class="pb3">
+            Alison hated Trainwreck
+        </li>
+        <li class="pb3">
+            Alison disliked Trainwreck
+        </li>
+        <li class="pb3">
+            OK’d Trainwreck
+        </li>
+        <li class="pb3">
+            Alison liked Trainwreck
+        </li>
+        <li class="pb2">
+            Alison loved Trainwreck
+        </li>
+    </ul>
+    <p>
+        Internally, using "OK’d" was a contentious issue because of its colloquial sound. We were delighted to see test users consistently understand its meaning.
+    </p>
+    <p class="lh-copy">
+        <div class="b pt4 pb1 f4">
+            Reviewing
+        </div>
+        The web prototype allowed us to design and test a review flow that caters to users who are either excited about writing complete reviews, or just want to express a quick Dislike or Like. Originally, after clicking on a button labeled “Me too” to indicate that I also watched this movie, read this book, or purchased this product, a popup would appear with rating buttons and an optional text field.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-rate-popup.png?auto=format" alt="Trullo rate popup" class="mw6 db pt5 pb1 hard-margin" /> -->
+    <img src="/img/trullo-rate-popup.png" alt="Trullo rate popup" class="mw6 db pt5 pb5 hard-margin" width=""/>
+    <p>
+        We quickly discovered that a strong minority of users have no interest in writing reviews; only collecting for their profiles. To address and satisfy this feedback, a “Don’t show again” option was added.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-rate-popup2.png?auto=format" alt="Trullo rate popup" class="mw6 db pt5 pb1 hard-margin" /> -->
+    <img src="/img/trullo-rate-popup2.png" alt="Trullo rate popup" class="mw6 db pt5 pb5 hard-margin" width=""/>
+    <p>
+        Users who enjoy writing reviews felt this popup was overwhelming. They didn’t want to be blocked from browsing the feed by a complicated, multi-step popup. First the user must select a rating option (No good, Liked it, Loved it), and then click Rate. The feedback was clear: the rating flow had to be smoother. This eventually led to what we refer to as the “Toaster,” and it’s explained in detail below.
+    </p>
+</section>
+
+<hr class="center mw6 mv5 mv6-ns"/>
+
+<!-- TAKE A STEP BACK -->
+
+<section class="center pl3 pr3 pl0-ns pr0-ns lh-copy pb4">
+    <div class="b pb0 center mw6 f3">
+        Take a step back
+    </div>
+    <p class="lh-copy mw6 center">
+        While iterating on the web prototype, I spent many hours thinking about what was next. What do we want Trullo to be? Perhaps a way to show off what you’ve watched, read, and purchased. Maybe a way to collect and visualize your purchases similar to <a href="https://www.delicious-monster.com" class="link blue underline">Delicious Library</a>. Maybe a chat app? A discovery app? It was crucial to spend ample time crafting moodboards, drawing sketches, filling whiteboards, and, most importantly, having conversations.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-moodboards.jpg?auto=format" alt="Trullo moodboards" class="mw6 db pt5 pb1 hard-margin" width="1200" /> -->
+    <img src="/img/trullo-moodboards.jpg" alt="Trullo moodboards" class="db pt5 pb1 hard-margin" width="1200"/>
+    <p class="f6 black-20 tc pb5">
+        Many doors and walls at the Homebrew HQ are painted orange. It happened. Let’s move on.
+    </p>
+    <p class="center mw6">
+        Talking (and more importantly listening) is by far my favorite part of the design process. It’s an opportunity to dig deep. Have coffee with people. Ask about their behaviors. Take a look at what they post on various social networks, see how their friends respond, and then ask questions. The goal is to pick out <span class="b">adjectives</span>. Something about an app frustrates you? Tell me more! We want to understand how our potential users feel about the world around them.
+    </p>
+    <div class="pt4 b pb0 center mw6 f4">
+        Wireframes
+    </div>
+    <p class="mw6 center">
+        After experimenting with Cordova as a way to deploy the responsive web app on both iOS and Android phones, it was time to focus our resources on building one great app.
+    </p>
+    <p class="mw6 center">
+        The team discovered that there’s a balance between crude and pretty when making effective wireframes. Keep them crude, but not so crude that you can’t ascertain the purpose of the screen. Keep them pretty, but not so pretty that one pays attention to the aesthetics.
+    </p>
+    <p class="mw6 center">
+        At Trullo, when designing a new flow, we’re constantly <span class="b">printing out wireframes</span>, and posting them using colorful <a href="http://www.amazon.com/Assorted-Color-Pawn-Magnetic-Push/dp/B00WAJ63UU/ref=sr_1_2?ie=UTF8&qid=1443816895&sr=8-2-spons&keywords=color+magnetic+pins&psc=1" class="blue link underline">magnetic push pins</a>. This allows us to agree on and build new features with minimal miscommunication. We know where each button on each screen leads before any code is written.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-wireframes.jpg?auto=format" alt="Trullo wireframes" class="mw6 db pt5 pb1 hard-margin" width="1200"/> -->
+    <img src="/img/trullo-wireframes.jpg" alt="Trullo wireframes" class="db pt5 pb1 hard-margin" width="1200"/>
+    <p class="f6 black-20 tc pb5 mw6 center lh-title">
+        We love discussing flows by posting mockups on the whiteboard. For a while these included photos of Michael Keaton’s Birdman until I realiezd the movie isn’t that great.
+    </p>
+    <div class="pt4 b pb0 center mw6 f4">
+        Testing
+    </div>
+    <p class="mw6 center">
+        A significant part of the culture at Trullo is usability testing. We often bring in users to test flows using InVision or native prototypes on the iPhone. Fortunately, Google Ventures has <a href="http://www.gv.com/lib/gv-guide-to-research" class="blue link underline">written extensively about user testing</a>. Our process has some overlap:
+    </p>
+    <ol class="pl3 pl0-ns center mw6">
+        <li class="pb3">
+            Use a MacBook to record the user’s facial expressions. A MacBook's tiny iSight camera is less intimidating than a real video camera.
+        </li>
+        <li class="pb3">
+            Set up a <a href="http://www.amazon.com/Ziggi-HD-High-Definition-Document-Camera-CDVU-04IP/dp/B008DBF5Z8/ref=sr_1_2?ie=UTF8&qid=1442445503&sr=8-2&keywords=ipevo" class="link blue underline">Ziggi camera</a> above the phone to record the user’s taps.
+        </li>
+        <li class="pb3">
+            Lower your chair height to avoid physically intimidating the user.
+        </li>
+        <li class="pb3">
+            Offer water, coffee, or tea.
+        </li>
+        <li class="pb3">
+            Keep tissue paper close by.
+        </li>
+        <li class="pb3">
+            Offer a restroom break before and after the test.
+        </li>
+        <li class="pb3">
+            Maintain a light-hearted and upbeat conversation. This takes practice.
+        </li>
+        <li class="pb3">
+            Maintain a light-hearted and upbeat conversation. This takes practice.
+        </li>
+        <li class="pb2">
+            <span class="b">Most importantly, have a clear test and goals.</span>
+        </li>
+    </ol>
+    <p class="mw6 center">
+        Occasionally we became overzelaous with testing, and learned that bringing in someone to test a new flow or prototype is not particularly valuable if you aren’t testing something specific. General feedback is great, but it does not require a formal process. Also, don’t test too much! We found that you can learn a significant amount after talking to only a few people. It’s important to ascertain actionable changes from those experiments, apply them to your flow, and test again.
+    </p>
+    <div class="pt4 b pb0 center mw6 f4">
+        Brand
+    </div>
+    <p class="mw6 center">
+        Stuph was originally both the name of the company and app. Some people liked it; some didn’t. Many didn’t know how to properly prounounce it. One test user said her “stuff was overwhelming.” She continued, “I want to get rid of stuff! Not talk about it.” We turned to an experienced branding agency named <a href="http://sevenfoldinc.com/" class="blue link underline">Sevenfold</a> for help.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-mark.png?auto=format" alt="Trullo mark" class="mw6 db pt5 pb1 hard-margin" width="256"/> -->
+    <img src="/img/trullo-mark.png" alt="Trullo mark" class="db pt5 pb1 hard-margin" width="256" />
+    <p class="f6 black-20 tc pb5 mw6 center lh-title">
+        The Trullo mark is influenced by real <a href="https://en.wikipedia.org/wiki/Trullo" class="link black-20 underline">trulli</a> in Alberobello, Italy.
+    </p>
+    <p class="mw6 center">
+        We spent weeks iterating on colors, names, logotypes, and marks. The result was <span class="b">Trullo</span>. Fortunately, we had already settled on what we now refer to as “Trullo Salmon” for the primary color because of its playfulness, and it tested very well within our target audience.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-logotype.png?auto=format" alt="Trullo mark" class="mw6 db pt5 pb1 hard-margin" height="84" /> -->
+    <img src="/img/trullo-logotype.png" alt="Trullo logotype" class="db pt5 pb1 hard-margin" height="84" />
+</section>
+
+<hr class="center mw6 mv5 mv6-ns"/>
+
+<!-- THE APP -->
+
+<section class="center pl3 pr3 pl0-ns pr0-ns lh-copy pb3">
+    <div class="b pb0 center mw6 f3">
+        Let's get native
+    </div>
+    <div class="pt4 b pb0 center mw6 f4">
+        The Feed
+    </div>
+    <p class="center mw6">
+        The web prototype had only one column of content, similar to Facebook and Tumblr. Combining long reviews with lots of buttons made the feed feel overwhelming.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-feed-early.png?auto=format" alt="Trullo feed early" class="mw6 db pt5 pb1 hard-margin" width="320"/> -->
+    <img src="/img/trullo-feed-early.png" alt="Trullo feed early" class="db pt5 pb1 hard-margin" width="320" />
+    <p class="f6 black-20 tc pb5 mw6 center lh-title">
+        An early prototype after transitioning from the web application to an iOS app.
+    </p>
+    <p class="mw6 center">
+        After seeing a friend review a movie that I’ve shared but not reviewed, I can:
+    </p>
+    <ol class="pl3 pl0-ns center mw6">
+        <li class="pb3">
+            Review the movie myself
+        </li>
+        <li class="pb3">
+            Reveal the entire review
+        </li>
+        <li class="pb3">
+            Comment on the review
+        </li>
+        <li class="pb3">
+            Heart individual comments
+        </li>
+        <li class="pb3">
+            Heart the review
+        </li>
+        <li class="pb2">
+            View the full conversation
+        </li>
+    </ol>
+    <p class="mw6 center">
+        There are so many possibilities! We instead tested a simplified approach similar to Pinterest, and our test users loved it. It felt “familiar” and “fun.” The only thing the user can do is tap on the card.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-feed.png?auto=format" alt="Trullo feed" class="mw6 db pt5 pb1 hard-margin" width="375"/> -->
+    <img src="/img/trullo-feed.png" alt="Trullo feed" class="db pt5 pb5 hard-margin" width="375" />
+    <p class="mw6 center">
+        Browsing the feed allows you to focus on the images, avatars, ratings, and, if available, snippets of reviews.
+    </p>
+    <div class="pt4 b pb0 center mw6 f4">
+        Review flow
+    </div>
+    <p class="center mw6">
+        As we learned while testing the web prototype, the review flow must be quick, simple, and avoid leaving the user feeling blocked or forced into completing a task.
+    </p>
+    <p class="center mw6">
+        Many review apps use a full-screen interface with numerous options or controls. The Trullo review flow is just a few taps that take place in what we refer to as the “Toaster” since it springs into place from the bottom of the screen. Watch the video below.
+    </p>
+    <div class="center mw6 tc pv4">
+        <iframe src="https://player.vimeo.com/video/139524534?title=0&byline=0&portrait=0" width="480" height="854" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="center"></iframe>
+        <p class="f6 black-20 tc pb5 mw6 center lh-title">
+            Honestly I haven’t seen Inside Out yet.
+        </p>
+    </div>
+    <ol class="pl3 pl0-ns center mw6">
+        <li class="pb3">
+            Tap “I watched it” and your followers know that you watched it. At this point you can close the Toaster and keep browsing.
+        </li>
+        <li class="pb3">
+            Tap a heart and your followers know that you liked or disliked it. Again, at this point you can close the Toaster and keep browsing.
+        </li>
+        <li class="pb2">
+            Tap the comment field to write some text. Even if you close the Toaster on this step, your friends will still know that you liked or disliked it. However, if you want to add some text and share to Facebook or Twitter, you can do so after tapping “POST.”
+        </li>
+    </ol>
+    <p class="center mw6">
+        This flow allows a user to rapidly post that you simply watched movies, read books, or purchased products. If a user wants to add a rating it’s just a single tap on a heart. Users are only blocked by a full-screen interface after choosing to enter text.
+    </p>
+    <div class="pt4 b pb0 center mw6 f4">
+        Profile
+    </div>
+    <p class="center mw6">
+        A Trullo profile was the best way to represent your taste in movies, books, and products. Often after a friend starts using Trullo, I could browse their profile and learn some exciting new things. Conversations (and occasionally debates) ensued.
+    </p>
+    <p class="center mw6">
+        The Wishlist tab is demonstrated in the screenshot below. We believed that collecting your friends’ favorite things that are unfamiliar to you became a valuable source of entertainment and purchasing inspiration. After posting that I wanted to watch a certain movie, friends would often chime in with either “What are you waiting for?” or “Skip it!”
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-profile.png?auto=format" alt="Trullo profile" class="mw6 db pt5 pb1 hard-margin" width="375"/> -->
+    <img src="/img/trullo-profile.png" alt="Trullo profile" class="db pt5 pb1 hard-margin" width="375" />
+    <p class="f6 black-20 tc pb0 mw6 center lh-title">
+        I swear I’ll watch Yojimbo soon! I hear it’s the inspiration for all Western movies.
+    </p>
+</section>
+
+<hr class="center mw6 mv5 mv6-ns"/>
+
+<!-- WEBSITE -->
+
+<section class="center pl3 pr3 pl0-ns pr0-ns lh-copy pb4">
+    <div class="b pb0 center mw6 f3">
+        Website
+    </div>
+    <p class="center mw6">
+        We tested two completely different landing pages before releasing the app. The <span class="b">functional</span> website was designed to educate potential users about what the app looks like and its features. Test users could ultimately explain the purpose of Trullo after viewing.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-functional-website.jpg?auto=format" alt="Trullo functional website" class="mw6 db pt5 pb1 hard-margin" width="512"/> -->
+    <img src="/img/trullo-functional-website.jpg" alt="Trullo functional website" class="db pt5 pb5 hard-margin" width="512" />
+    <p class="center mw6">
+        The <span class="b">emotive</span> version of the website was designed to excite and inspire potential users. After showing it to several test users we learned that the photos distracted people from comprehending the screenshots and text. They felt confused, and could not confidently articulate Trullo’s purpose.
+    </p>
+    <!-- <img src="https://diklein.imgix.net/trullo-emotive-website.jpg?auto=format" alt="Trullo emotive website" class="mw6 db pt5 pb1 hard-margin" width="512"/> -->
+    <img src="/img/trullo-emotive-website.jpg" alt="Trullo emotive website" class="db pt5 pb3 hard-margin" width="512" />
+</section>
+
+<hr class="center mw6 mv5 mv6-ns"/>
+
+<!-- LAUNCH -->
+
+<section class="center pl3 pr3 pl0-ns pr0-ns lh-copy pb6">
+    <div class="b pb0 center mw6 f3">
+        Launch
+    </div>
+    <p class="center mw6">
+        The app went live on Thursday, September 17th, 2015, and we were thrilled with the response. Designing a product from the beginning and finally releasing it was quite the experience. We learned a tremendous amount about how to prototype, design, test, build, and release a product. Even though Trullo was ultimately removed from the App Store, I am tremendously proud of the team.
+    </p>
+    <p class="center mw6">
+        We learned some crucial things along the way:
+    </p>
+    <ul class="pl3 pl0-ns center mw6">
+        <li class="pb3">
+            Launch quickly. I know this sounds obvious and you hear it constantly from the startup community, but it's important enough to be listed again. Launch and learn.
+        </li>
+        <li class="pb3">
+            It doesn't have to be perfect. You want users to have the ability to like something? That's fine. Do they also need the ability to unlike something? Another state, another API call, another icon, etc. You do not need every user-expected feature to launch.
+        </li>
+        <li class="pb3">
+            Keep the interface simple. You do not need fancy animations and interfaces. They take time to design, build, and test.
+        </li>
+        <li class="pb3">
+            Solve a real problem. Otherwise, you're competing with other time-wasting apps.
+        </li>
+    </ul>
+    <div class="pt4 ttu f6 fw7 mw6 center">
+       <a href="/portfolio" class="no-underline blue">← back to portfolio</a>
+    </div>
+</section>

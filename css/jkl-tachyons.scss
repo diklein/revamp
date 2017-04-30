@@ -1194,7 +1194,7 @@ be set to the current text color.
 .bg-light-green { background-color: #9eebcf; }
 .bg-navy { background-color: #001b44; }
 .bg-dark-blue { background-color: #00449e; }
-.bg-blue { background-color: #357edd; }
+.bg-blue { background-color: #068dff; }
 .bg-light-blue { background-color: #96ccff; }
 .bg-lightest-blue { background-color: #cdecff; }
 .bg-washed-blue { background-color: #f6fffe; }
@@ -3016,6 +3016,10 @@ ul {
 
 .nav-fix {
    padding-top: .7em
+}
+
+.btn-link-text:hover {
+    color: rgba(255,255,255,0.8);
 }
 
 // img {
