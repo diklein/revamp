@@ -5,42 +5,16 @@
    var title = "{{ page.title }}";
    var tag = "{{ page.tag }}";
    if (title == "Journal" || tag == "journal") {
-
-      // underline solution
-      // journalLink.className += " selected-on-page";
-
-      // faded solution
       portfolioLink.className = "no-underline black-30";
       aboutLink.className = "no-underline black-30";
-
    } else if (title == "Portfolio" || tag == "portfolio") {
-
-      // underline solution
-      // portfolioLink.className += " selected-on-page";
-
-      // faded solution
       journalLink.className = "no-underline black-30";
       aboutLink.className = "no-underline black-30";
-
    } else if (title == "About") {
-
-      // underline solution
-      // aboutLink.className += " selected-on-page";
-
-      // faded solution
       journalLink.className = "no-underline black-30";
       portfolioLink.className = "no-underline black-30";
-
    }
-
-//    var main = document.querySelector(".main");
-//    document.addEventListener('mousemove', function (e) {
-//     let w = getComputedStyle(document.documentElement).width.slice(0, -2),
-//         h = getComputedStyle(document.documentElement).height.slice(0, -2),
-//         rx = (h / 2 - e.pageY) / 50,
-//         ry = (w / 2 - e.pageX) / 100;
-//
-//     main.style.transform = 'rotateX(' + rx + 'deg) rotateY(' + -ry + 'deg)';
-// });
-
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="/js/zoom.js"></script>
+<script src="/js/transition.js"></script>
