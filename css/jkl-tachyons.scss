@@ -3044,3 +3044,7 @@ ul {
   -webkit-transition: all .4s cubic-bezier(.77, 0, .175, 1);
   transition: all .4s cubic-bezier(.77, 0, .175, 1);
 }
+
+.datShadow {
+   box-shadow: 0 16px 32px rgba(0, 0, 0, .25);
+}
