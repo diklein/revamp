@@ -3,15 +3,16 @@
       Journal
    </h1> -->
     {% for post in site.posts %}
-      <li class="list pb5 tl-ns">
+      <li class="list tl-ns">
         <a href="{{ post.url }}" title="{{post.title}}" class="no-underline black lh-copy">
-          <span class="f4">{{ post.title }}</span>
+          <span class="f3">{{ post.title }}</span>
         </a>
-        <date class="db i black-30" datetime="{{post.date}}">{{ post.date | date_to_long_string }}</date>
-        <!-- <div class="pt1 black-80">
+        <date class="db i black-30 f4" datetime="{{post.date}}">{{ post.date | date_to_long_string }}</date>
+        <div class="pt3 black-80 f4 pb4">
            {{ post.description }}
-        </div> -->
-        <!-- <a href="{{ post.url }}" title="{{post.title}}" class="link blue underline">Read more</a> -->
+        </div>
+        <a href="{{ post.url }}" title="{{post.title}}" class="link blue underline f4">Read more</a>
+        <hr class="center mw4 mv4 mv5-ns">
       </li>
     {% endfor %}
 </section>

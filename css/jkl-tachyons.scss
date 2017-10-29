@@ -32,7 +32,7 @@
 * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
 */
 html {
-   // font-family: Benton Sans;
+   // font-family: TiemposText, UntitledSans;
    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;
    overflow-y:scroll;
 }
@@ -58,6 +58,35 @@ html {
 //    font-style: italic;
 // }
 //
+
+// @font-face {
+//    font-family: 'TiemposText';
+//    src: url('../fonts/TiemposTextTest-Regular.otf') format('opentype');
+//    font-weight: normal;
+//    font-style: normal;
+// }
+// @font-face {
+//    font-family: 'TiemposText';
+//    src: url('../fonts/TiemposTextTest-Bold.otf') format('opentype');
+//    font-weight: bold;
+//    font-style: normal;
+// }
+// @font-face {
+//    font-family: 'TiemposText';
+//    src: url('../fonts/TiemposTextTest-Italic.otf') format('opentype');
+//    font-weight: normal;
+//    font-style: italic;
+// }
+// @font-face {
+//    font-family: 'UntitledSans';
+//    src: url('../fonts/UntitledSansTest-Regular.otf') format('opentype');
+//    font-weight: normal;
+//    font-style: normal;
+// }
+
+
+
+
 
 
 /**
@@ -897,7 +926,7 @@ Media Query Extensions:
 */
 .lh-solid { line-height: 1; }
 .lh-title { line-height: 1.25; }
-.lh-copy { line-height: 1.65; }
+.lh-copy { line-height: 1.6; }
 /*
 
 LINKS
@@ -1606,9 +1635,9 @@ Media Query Extensions:
 .f-6, .f-headline { font-size: 6rem; }
 .f-5, .f-subheadline { font-size: 5rem; }
 /* Type Scale */
-.f1 { font-size: 3rem; }
-.f2 { font-size: 2.25rem; }
-.f3 { font-size: 1.5rem; }
+.f1 { font-size: 5rem; }
+.f2 { font-size: 2.5rem; }
+.f3 { font-size: 1.875rem; }
 .f4 { font-size: 1.25rem; }
 .f5 { font-size: 1rem; }
 .f6 { font-size: .875rem; }
@@ -2992,7 +3021,7 @@ code {
 hr {
    border:0;
    height:2px;
-   background:#f4f4f4
+   background:#f0f0f0
 }
 .selected-on-page {
    padding-bottom: 31px;
@@ -3048,3 +3077,13 @@ ul {
 .datShadow {
    box-shadow: 0 16px 32px rgba(0, 0, 0, .25);
 }
+
+// h1 {
+//    font-family: 'UntitledSans';
+// }
+
+p {
+  padding-bottom: 1em;
+}
+
+.bg-sf { background-color: #1798ca; }
