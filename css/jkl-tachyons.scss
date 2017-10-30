@@ -3005,14 +3005,15 @@ a:hover {
 a.link.underline.white:hover {
    color: rgba(255,255,255,0.5)
 }
+
 .nav-list a:hover {
    color: black;
-   padding-bottom: 37px;
+   padding-bottom: 23px;
    border-bottom: 1px solid #999
 }
 .title-link:hover {
    color: black;
-   padding-bottom: 32px;
+   padding-bottom: 23px;
    border-bottom: 1px solid #999
 }
 code {
@@ -3023,10 +3024,10 @@ hr {
    height:2px;
    background:#f0f0f0
 }
-.selected-on-page {
-   padding-bottom: 31px;
-   border-bottom: 2px solid black
-}
+// .selected-on-page {
+//    padding-bottom: 19px;
+//    border-bottom: 1px solid black
+// }
 
 .hard-margin {
    margin: 0 auto;
@@ -3034,8 +3035,11 @@ hr {
 
 @media screen and (min-width: 30em) {
    .selected-on-page {
-      padding-bottom: 36px;
-      border-bottom: 2px solid black
+      padding-bottom: 23px;
+      border-bottom: 1px solid black
+   }
+   .nav-list {
+     padding: 7px 0 0 0;
    }
 }
 
@@ -3078,12 +3082,12 @@ ul {
    box-shadow: 0 16px 32px rgba(0, 0, 0, .25);
 }
 
-// h1 {
-//    font-family: 'UntitledSans';
-// }
-
 p {
   padding-bottom: 1em;
 }
 
 .bg-sf { background-color: #1798ca; }
+
+ol {
+  margin-top: 0 !important;
+}

@@ -5,7 +5,7 @@
     {% for post in site.posts %}
       <li class="list tl-ns">
         <a href="{{ post.url }}" title="{{post.title}}" class="no-underline black lh-copy">
-          <span class="f3">{{ post.title }}</span>
+          <span class="f4 b">{{ post.title }}</span>
         </a>
         <date class="db i black-30 f4" datetime="{{post.date}}">{{ post.date | date_to_long_string }}</date>
         <div class="pt3 black-80 f4 pb4">
