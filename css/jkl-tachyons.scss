@@ -3059,19 +3059,6 @@ ul {
 
 .justify { text-align: justify; }
 
-// img {
-//    -webkit-transform: scale(1);
-//    transform: scale(1);
-//    -webkit-transition: .2s ease-in-out;
-//    transition: .2s ease-in-out;
-//    overflow: hidden;
-// }
-//
-// .aspect-ratio img:hover {
-//    -webkit-transform: scale(1.05);
-// 	transform: scale(1.05);
-// }
-
 .datHover:hover {
   box-shadow: 0 16px 32px rgba(0, 0, 0, .25);
   -webkit-transition: all .4s cubic-bezier(.77, 0, .175, 1);
@@ -3091,3 +3078,16 @@ p {
 ol {
   margin-top: 0 !important;
 }
+
+// img {
+//    -webkit-transform: scale(1);
+//    transform: scale(1);
+//    -webkit-transition: .2s ease-in-out;
+//    transition: .2s ease-in-out;
+//    overflow: hidden;
+// }
+//
+// .aspect-ratio img:hover {
+//    -webkit-transform: scale(1.05);
+// 	transform: scale(1.05);
+// }
