@@ -163,11 +163,11 @@ dfn { font-style: italic; }
 * Correct the font size and margin on `h1` elements within `section` and
 * `article` contexts in Chrome, Firefox, and Safari.
 */
-h1 { font-size: 2em; margin: .67em 0; }
+h1 { font-size: 2em; margin: .5em 0; }
 /**
 * Add the correct background and color in IE 9-.
 */
-mark { background-color: #fdffb6; color: #000; box-shadow: #fdffb6 0 0 5px; }
+mark { background-color: yellow; color: #000; box-shadow: #fdffb6 0 0 5px; }
 /**
 * Add the correct font size in all browsers.
 */
@@ -3084,6 +3084,11 @@ p {
 
 ol {
   margin-top: 0 !important;
+}
+
+.pill-fix {
+  padding-bottom: 8px;
+  padding-top: 6px;
 }
 
 // img {
