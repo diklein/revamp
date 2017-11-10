@@ -25,11 +25,6 @@ sass:
 
 # gems: [jekyll-admin]
 
-plugins:
-  - jekyll-paginate
-
-paginate: 50
-
 manifest_name: David Klein · Freshly Ground Design
 manifest_short_name: David Klein
 manifest_lang: en

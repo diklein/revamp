@@ -7,7 +7,6 @@ gem 'rspec'
 gem 'jekyll'
 group :jekyll_plugins do
   gem "jekyll-admin"
-  gem "jekyll-paginate"
 end
 
 # gem "rails"
