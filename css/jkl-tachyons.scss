@@ -2998,7 +2998,7 @@ Just tack one of these classes onto a parent element.
 // }
 
 a:hover {
-   color: grey;
+   opacity: .9;
    -webkit-transition: color .15s ease-in;
    transition: color .15s ease-in;
 }
@@ -3090,6 +3090,17 @@ ol {
   padding-bottom: 8px;
   padding-top: 6px;
 }
+
+.hover-bg-link:hover { background-color: #fcfcfc; }
+
+.dim-subtle { opacity: 1; -webkit-transition: opacity .15s ease-in; transition: opacity .15s ease-in; }
+.dim-subtle:hover, .dim-subtle:focus { opacity: .8; -webkit-transition: opacity .15s ease-in; transition: opacity .15s ease-in; }
+.dim-subtle:active { opacity: .7; -webkit-transition: opacity .15s ease-out; transition: opacity .15s ease-out; }
+
+.no-circle {
+  list-style: none;
+}
+
 
 // img {
 //    -webkit-transform: scale(1);

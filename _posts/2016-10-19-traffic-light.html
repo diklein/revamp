@@ -1,0 +1,203 @@
+---
+title: Traffic Light
+layout: posts
+author: David Klein
+date: 2016-10-19
+tag: journal
+description: "I'm currently taking a JavaScript course at General Assembly. Here's a homework assignment where I had to build a traffic light."
+---
+
+<section class="center mw6 pl3 pr3 pl0-ns pr0-ns pb4 pb6-ns pt6-ns lh-copy">
+   <h1 class="f3 f2-ns lh-copy mb0 pt4 black-80">
+      {{ page.title }}
+   </h1>
+   <date class="db i black-30 pb4 f4" datetime="{{post.date}}">{{ page.date | date_to_long_string }}</date>
+   <div class="f4">
+     <p>
+       I'm currently taking a JavaScript course at <a href="https://generalassemb.ly" class="blue link underline">General Assembly</a>. Here's a homework assignment where I had to build a traffic light. You can see it in action on <a href="http://dk-jsd4.herokuapp.com/homework/traffic-light/traffic-light.html" class="blue link underline">Heroku</a>.
+     </p>
+     <div class="b bb b--black-20">JavaScript</div>
+     <pre class="pt4 f6 pb4">
+// Setup
+// ----------------------------------------------
+var trafficLight = document.querySelector("#traffic-light");
+var stopButton = document.querySelector(".stop-button");
+var slowButton = document.querySelector(".slow-button");
+var goButton = document.querySelector(".go-button");
+var cautionButton = document.querySelector(".caution-button");
+var runButton = document.createElement("button")
+runButton.textContent = "Run";
+var controls = document.querySelector(".controls");
+controls.appendChild(runButton);
+var cautionState, cautionLight, cycleState, greenlight, yellowLight, redLight;
+
+// Events
+// ----------------------------------------------
+stopButton.addEventListener("click", changeLight);
+slowButton.addEventListener("click", changeLight);
+goButton.addEventListener("click", changeLight);
+cautionButton.addEventListener("click", cautionLight);
+runButton.addEventListener("click", cycleLights);
+
+// Event handlers
+// ----------------------------------------------
+function changeLight(event) {
+  turnOff();
+  var state = event.target.classList[1].split('-')[0];
+  trafficLight.classList.add(state);
+}
+
+function turnOff() {
+  trafficLight.classList.remove("stop");
+  trafficLight.classList.remove("slow");
+  trafficLight.classList.remove("go");
+  if(cautionState) {
+     clearInterval(cautionState);
+  }
+  if(cycleState) {
+     clearInterval(cycleState);
+  }
+}
+
+function cautionLight() {
+  turnOff();
+  trafficLight.classList.add("slow");
+  cautionLight = true;
+  cautionState = setInterval(pulseYellow, 1000);
+}
+
+function pulseYellow() {
+  if(cautionLight) {
+     trafficLight.classList.remove("slow");
+     cautionLight = false;
+  }
+  else {
+     trafficLight.classList.add("slow");
+     cautionLight = true;
+  }
+}
+
+function cycleLights() {
+  turnOff();
+  yellowLight = redLight = false;
+  trafficLight.classList.add("go");
+  greenLight = true;
+  cycleState = setInterval(cycle, 1000);
+}
+
+function cycle() {
+  if(greenLight == true) {
+     trafficLight.classList.remove("go");
+     trafficLight.classList.add("slow");
+     greenLight = redLight = false;
+     yellowLight = true;
+  } else if (yellowLight == true) {
+     trafficLight.classList.remove("slow");
+     trafficLight.classList.add("stop");
+     greenLight = yellowLight = false;
+     redLight = true;
+  } else if (redLight == true) {
+     trafficLight.classList.remove("stop");
+     trafficLight.classList.add("go");
+     yellowLight = redLight = false;
+     greenLight = true;
+  }
+}
+
+    </pre>
+    <div class="b bb b--black-20">CSS</div>
+    <pre class="f6">
+
+/* Layout */
+/* -------------------------------- */
+body {
+	background: #6A9CDC;
+	min-width: 320px;
+	max-width: 375px;
+}
+
+
+/* Typography */
+/* -------------------------------- */
+body,
+button {
+	font-family: "AvenirNext-Regular", sans-serif;
+}
+
+
+/* Controls */
+/* -------------------------------- */
+.controls {
+	display: flex;
+	margin: 10px 20px 30px;
+}
+.controls button {
+	flex: 1;
+	margin: 5px;
+	padding: 5px 10px;
+	border: 2px solid #C0C0C0;
+	border-radius: 5px;
+	color: #FFFFFF;
+	background: #A6A6A6;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+/* Traffic light */
+/* -------------------------------- */
+#traffic-light {
+	width: 180px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: rgb(233, 196, 0);
+	box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Lights */
+/* -------------------------------- */
+.light {
+	width: 100px;
+	height: 100px;
+	margin: 20px auto;
+	border-radius: 100%;
+	border: 2px solid black;
+	border-top-width: 6px;
+	border-bottom-width: 1px;
+	background-color: rgb(96, 80, 0);
+	box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
+	transition: background-color 150ms;
+}
+.stop .stop-light {
+	background-color: rgb(209, 43, 5);
+	box-shadow: 0 10px 40px rgba(209, 43, 5, 0.4);
+}
+.slow .slow-light {
+	background-color: rgb(255, 240, 47);
+	box-shadow: 0 10px 40px rgba(255, 240, 47, 0.4);
+}
+.go .go-light {
+	background-color: rgb(9, 204, 40);
+	box-shadow: 0 10px 40px rgba(9, 204, 40, 0.4);
+}
+
+
+/* Pole */
+/* -------------------------------- */
+.pole {
+	width: 30px;
+	height: 300px;
+	margin: 0 auto;
+	border: 2px solid black;
+	border-top-width: 0;
+	background-color: rgb(91,70,2);
+}
+
+
+     </pre>
+   </div>
+   <div class="pt4 ttu f6 fw7">
+      <a href="/journal" class="no-underline blue dim">← back to journal</a>
+   </div>
+</section>

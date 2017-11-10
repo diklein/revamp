@@ -1,18 +1,39 @@
-<section class="center mw6 pl3 pr3 pl0-ns pr0-ns pb4 pb6-ns pt6 lh-copy">
-   <!-- <h1 class="f2 pt0 pb0 pb4-ns pt5-ns lh-copy center">
-      Journal
-   </h1> -->
-    {% for post in site.posts %}
-      <li class="list tl-ns">
-        <a href="{{ post.url }}" title="{{post.title}}" class="no-underline black lh-copy">
-          <span class="f4 b">{{ post.title }}</span>
-        </a>
+<section class="center mw6 pl3 pr3 pl0-ns pr0-ns mb4 mb6-ns pt6 lh-copy">
+
+  <p class="mb5 f2"><span class="b">{{ site.posts | size }}</span> posts since 2009. Enjoy.</p>
+
+  <!-- OLD SOLUTION -->
+
+  <!-- {% for post in site.posts %}
+    <li class="list tl-ns mt4 dim-subtle">
+      <a href="{{ post.url }}" title="{{post.title}}" class="no-underline black lh-copy">
+        <span class="f4 b blue">{{ post.title }}</span>
         <date class="db i black-30 f4" datetime="{{post.date}}">{{ post.date | date_to_long_string }}</date>
-        <div class="pt3 black-80 f4 pb4">
-           {{ post.description }}
+        <div class="pt3 black-80 f4 mb6">
+          {{ post.description }}
         </div>
-        <a href="{{ post.url }}" title="{{post.title}}" class="link blue underline f4">Read more</a>
-        <hr class="center mw4 mv4 mv5-ns">
-      </li>
-    {% endfor %}
+    </a>
+    </li>
+  {% endfor %} -->
+
+  {% assign postsByYear =
+      site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+  {% for year in postsByYear %}
+    <div class="f3 b bb b--black-20">{{ year.name }}</span></div>
+      <ul class="pb4 pl0">
+        {% for post in year.items %}
+          <li class="list tl-ns f4 pt2 pb5 dim-subtle">
+            <a href="{{ post.url }}" class="b blue no-underline">
+              {{ post.title }}
+            </a>
+            <a href="{{ post.url }}" class="no-underline">
+              <div class="pt2 black-80 f4">
+                {{ post.description }}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+  {% endfor %}
+
 </section>

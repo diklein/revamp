@@ -1,0 +1,367 @@
+---
+title: JSD4 Final Project
+layout: posts
+author: David Klein
+date: 2016-11-29
+tag: journal
+description: "The final project for my General Assembly class is particularly cool. I built a dashboard for people to see my latest Instagram photo, Dribbble shot, and Tweet on one page."
+---
+
+<section class="center mw6 pl3 pr3 pl0-ns pr0-ns pb4 pb6-ns pt6-ns lh-copy">
+   <h1 class="f3 f2-ns lh-copy mb0 pt4 black-80">
+      {{ page.title }}
+   </h1>
+   <date class="db i black-30 pb4 f4" datetime="{{post.date}}">{{ page.date | date_to_long_string }}</date>
+   <div class="f4">
+     <p>
+       The final project for my <a href="https://generalassemb.ly" class="blue link underline">General Assembly</a> JavaScript class is particularly cool. I built a dashboard for people to see my latest <a href="https://www.instagram.com/diklein/" class="blue link underline">Instagram photo</a>, <a href="https://dribbble.com/diklein" class="blue link underline">Dribbble shot</a>, and <a href="https://twitter.com/diklein" class="blue link underline">Tweet</a> on one page using React, Node, Firebase, and Express. The project is live on <a href="http://dk-jsd4.herokuapp.com/final/" class="blue link underline">Heroku</a>.
+     </p>
+     <p>
+       Thank you Jordan, Kyle, and Arthur for pushing me to improve my code.
+     </p>
+     <div class="b bb b--black-20">Node.js</div>
+     <pre class="pt2 f6 pb4">
+
+// SETUP
+// ---------------------------------------------------
+var express = require('express');
+var app = express();
+var router = express.Router();
+app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
+// routes
+router.get('/', function(req, res) {
+  res.render('home');
+});
+router.get('/final', function(req, res) {
+  res.render('final');
+});
+router.get('/contacts', function(req, res) {
+  res.render('contacts');
+});
+app.use('/', router);
+app.use('/final', router);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
+// TWITTER
+// ---------------------------------------------------
+var Twitter = require('twitter');
+var client = new Twitter({
+  consumer_key: 'NICE',
+  consumer_secret: 'TRY',
+  access_token_key: 'BRO',
+  access_token_secret: 'BROAGAIN'
+});
+var params = {screen_name: 'diklein'};
+router.get('/tweets', function (req, res) {
+  client.get('statuses/user_timeline', params, function(error, tweets, response) {
+     if (!error) {
+        var tweetJson = JSON.stringify(tweets);
+        res.send(tweetJson);
+     }
+     else {
+        console.log(error);
+     }
+  });
+});
+
+// INSTAGRAM
+// ---------------------------------------------------
+router.get('/instagram', function (req, res) {
+  client.get(
+  'https://api.instagram.com/v1/users/69315/media/recent/?access_token=NICETRY&count=1',
+  function(error, photos, response) {
+     if (!error) {
+        var instagramJson = JSON.stringify(photos);
+        // console.log(instagramJson);
+        res.send(instagramJson);
+     }
+  });
+});
+
+// DRIBBBLE
+// ---------------------------------------------------
+var request = require('request');
+router.get('/dribbble', function (req, res) {
+  request('https://api.dribbble.com/v1/users/diklein/shots?access_token=WHATUPSON',
+  function (error, response, body) {
+     if (!error && response.statusCode == 200) {
+        res.send(body);
+     }
+  })
+});
+
+
+     </pre>
+     <div class="b bb b--black-20">JavaScript</div>
+     <pre class="f6">
+
+// RENDER PARENT COMPONENT
+// --------------------------------------------------
+var RenderComponent = React.createClass({
+  // set up the empty state for all data
+  getInitialState: function () {
+     return {
+        // likes first
+        twitterLikes: 0,
+        dribbbleLikes: 0,
+        instagramLikes: 0,
+        // twitter data container
+        twitterSnapshot: {
+           permalink: '',
+           text: '',
+           time: '',
+           timeYear: '',
+           timeDayName: '',
+           timeDayOfMonth: '',
+           timeMonth: ''
+        },
+        // dribbble data container
+        dribbbleSnapshot: {
+           permalink: '',
+           photoURL: '',
+           caption: '',
+           time: '',
+           timeYear: '',
+           timeDayName: '',
+           timeDayOfMonth: '',
+           timeMonth: ''
+        },
+        // instagram data container
+        instagramSnapshot: {
+           permalink: '',
+           photoURL: '',
+           caption: '',
+           time: '',
+           timeYear: '',
+           timeDayName: '',
+           timeDayOfMonth: '',
+           timeMonth: ''
+        }
+     };
+  },
+
+  // set up firebase before page is ready
+  componentWillMount() {
+     this.ref = new Firebase("https://dk-jsd4.firebaseio.com/");
+  },
+
+  // after page is ready go round up the data
+  componentDidMount() {
+     // get firebase data and set likes state
+     this.ref.on('value', function (snapshot) {
+        var data = snapshot.val();
+        if (data !== null) {
+           this.setState({
+              twitterLikes: data.twitter,
+              instagramLikes: data.instagram,
+              dribbbleLikes: data.dribbble
+           });
+        }
+     }.bind(this));
+
+     // set state with twitter content with promise
+     getTwitterData().then(function (data) {
+        this.setState({
+           twitterSnapshot: data
+        });
+     }.bind(this));
+
+     // set state with dribbble content with promise
+     getDribbbleData().then(function (data) {
+        this.setState({
+           dribbbleSnapshot: data
+        });
+     }.bind(this));
+
+     // set state with instagram content with promise
+     getInstagramData().then(function (data) {
+        this.setState({
+           instagramSnapshot: data
+        });
+     }.bind(this));
+
+  },
+
+  // if user clicks twitter like link
+  increaseTwitterLike: function(e) {
+     e.preventDefault();
+     // make a new variable because of timing
+     const newLikes = this.state.twitterLikes + 1;
+     this.setState({ twitterLikes: newLikes });
+     // only update twitter value in firebase
+     // '.child' allows you to write to a specific part of the firebase data
+     this.ref.child('twitter').set(newLikes);
+  },
+
+  // if user clicks dribbble like link
+  increaseDribbbleLike: function(e) {
+     e.preventDefault();
+     // make a new variable because of timing
+     const newLikes = this.state.dribbbleLikes + 1;
+     this.setState({ dribbbleLikes: newLikes });
+     // only update dribbble value in firebase
+     this.ref.child('dribbble').set(newLikes);
+  },
+
+  // if user clicks instagramLike like link
+  increaseInstagramLike: function(e) {
+     e.preventDefault();
+     // make a new variable because of timing
+     const newLikes = this.state.instagramLikes + 1;
+     this.setState({ instagramLikes: newLikes });
+     // only update instagram value in firebase
+     this.ref.child('instagram').set(newLikes);
+  },
+
+  // render individual components
+  // each component receives props — likes, state, and click function}
+  // '...' saves significant space by not specifying each part of the object
+  render: function() {
+     return(
+        &lt;div&gt;
+        &lt;TwitterComponent likes={this.state.twitterLikes} {...this.state.twitterSnapshot} onClick={this.increaseTwitterLike} /&gt;
+        &lt;InstagramComponent likes={this.state.instagramLikes} {...this.state.instagramSnapshot} onClick={this.increaseInstagramLike} /&gt;
+        &lt;DribbbleComponent likes={this.state.dribbbleLikes} {...this.state.dribbbleSnapshot} onClick={this.increaseDribbbleLike} /&gt;
+        &lt;/div&gt;
+     )
+  }
+});
+
+// TWITTER
+// --------------------------------------------------
+function getTwitterData() {
+  // set up promise for json data
+  return $.getJSON('/tweets').then(function(tweets) {
+     const firstTweet = tweets.filter(tweet => (tweet.text)[0] !== '@')[0];
+     const firstTweetDate = new Date(firstTweet.created_at.toString());
+     // return data from json
+     return {
+        'permalink': "https://twitter.com/diklein/status/" + firstTweet.id_str,
+        'text': firstTweet.text,
+        'time': firstTweetDate.created_at,
+        'timeYear': firstTweetDate.getFullYear(),
+        'timeDayName': days[firstTweetDate.getDay()],
+        'timeDayOfMonth': firstTweetDate.getUTCDate(),
+        'timeMonth': months[(firstTweetDate.getUTCMonth() + 1)]
+     };
+  });
+}
+
+// twitter component
+function TwitterComponent(props) {
+  return (
+     &lt;div className="twitter"&gt;
+        {props.text}
+        &lt;span className="time"&gt;
+           &lt;a href={props.permalink}&gt;{props.timeDayName} {props.timeMonth} {props.timeDayofMonth}, {props.timeYear}&lt;/a&gt;
+           &nbsp;·&nbsp;&lt;a href='#' onClick={props.onClick} className="twitterLike">Like {props.likes &gt; 0 &amp;&amp; ' · ' + props.likes}&lt;/a&gt;
+        &lt;/span&gt;
+     &lt;/div&gt;
+  )
+}
+
+// DRIBBBLE
+// --------------------------------------------------
+// get data out of json
+function getDribbbleData() {
+  // set up promise for json data
+  return $.getJSON('/dribbble').then(function(shots) {
+     // setup
+     const firstShot = shots[0];
+     const firstShotDate = new Date(firstShot.created_at);
+     const fixingCaption = firstShot.description.replace('&lt;p&gt;','');
+     // return data from json
+     return {
+        'permalink': firstShot.html_url,
+        'photoURL': firstShot.images.hidpi,
+        'caption': fixingCaption.replace('&lt;/p&gt;',''),
+        'time': firstShotDate,
+        'timeYear': firstShotDate.getFullYear(),
+        'timeDayName': days[firstShotDate.getDay()],
+        'timeDayOfMonth': firstShotDate.getUTCDate(),
+        'timeMonth': months[(firstShotDate.getUTCMonth() + 1)]
+     };
+  });
+}
+
+// dribbble component
+function DribbbleComponent(props) {
+  return (
+     &lt;div className="dribbble"&gt;
+        &lt;div className="imgContainer"&gt;
+           &lt;img src={props.photoURL} /&gt;
+           &lt;/div&gt;
+        &lt;div className="dribbbleContent"&gt;
+           &lt;span className="caption"&gt;
+              {props.caption}
+           &lt;/span&gt;
+           &lt;span className="time"&gt;
+              &lt;a href={props.permalink}>{props.timeDayName}, {props.timeMonth} {props.timeDayOfMonth}, {props.timeYear}&lt;/a&gt;
+              &nbsp;·&nbsp;&lt;a href='#' onClick={props.onClick} className="dribbbleLike">Like {props.likes &gt; 0 &amp;&amp; ' · ' + props.likes}&lt;/a&gt;
+           &lt;/span&gt;
+        &lt;/div&gt;
+     &lt;/div&gt;
+  )
+}
+
+// INSTAGRAM
+// --------------------------------------------------
+// get data out of json
+function getInstagramData() {
+  // set up promise for json data
+  return $.getJSON('/instagram').then(function(photos) {
+     // setup
+     const firstPhoto = photos.data[0];
+     const firstPhotoDate = new Date(firstPhoto.created_time * 1000);
+     // return data from json
+     return {
+        'permalink': firstPhoto.link,
+        'photoURL': firstPhoto.images.standard_resolution.url,
+        'caption': firstPhoto.caption.text,
+        'time': firstPhotoDate,
+        'timeYear': firstPhotoDate.getFullYear(),
+        'timeDayName': days[firstPhotoDate.getDay()],
+        'timeDayOfMonth': firstPhotoDate.getUTCDate(),
+        'timeMonth': months[(firstPhotoDate.getUTCMonth() + 1)]
+     };
+  });
+}
+
+// instagram component
+function InstagramComponent(props) {
+  return (
+     &lt;div className="instagram"&gt;
+        &lt;div className="imgContainer"&gt;
+           &lt;img src={props.photoURL} /&gt;
+        &lt;/div&gt;
+        &lt;div className="instagramContent"&gt;
+           &lt;span className="caption"&gt;
+              {props.caption}
+           &lt;/span&gt;
+           &lt;span className="time"&gt;
+              &lt;a href={props.permalink}>{props.timeDayName}, {props.timeMonth} {props.timeDayOfMonth}, {props.timeYear}&lt;/a&gt;
+              &nbsp;·&nbsp;
+              &lt;a href='#' onClick={props.onClick} className="instagramLike">Like {props.likes &gt; 0 &amp;&amp; ' · ' + props.likes}&lt;/a&gt;
+           &lt;/span&gt;
+        &lt;/div&gt;
+     &lt;/div&gt;
+  )
+}
+
+// render the component that contains the smaller components
+const parent = document.querySelector(".parent");
+ReactDOM.render(&lt;RenderComponent /&gt;, parent);
+
+
+     </pre>
+   </div>
+   <div class="pt4 ttu f6 fw7">
+      <a href="/journal" class="no-underline blue dim">← back to journal</a>
+   </div>
+</section>

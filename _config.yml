@@ -1,16 +1,7 @@
-# This will be the first part of the title tag for your site <title> site.name + page.title </title>
 name: "David Klein · Freshly Ground Design"
-# Populates the meta description for the site. Should be under 150 characters for best SEO purposes.
 descripiton: "David Klein, a designer in San Francisco who loves coffee"
-
-# Owner (organization or individual) of site content
 author: "David Klein"
-
-#url: http://
 url: "http://diklein.com"
-
-# Your UA tracking number (i.e 35858753-1) for Google Analytics.
-# If you comment this out, or don't fill out this parameter - Google analytics won't be included.
 googleID: 39930910-6
 
 # Pagination variable for how many posts to show in a list
@@ -33,3 +24,14 @@ sass:
     style: compressed
 
 # gems: [jekyll-admin]
+
+plugins:
+  - jekyll-paginate
+
+paginate: 50
+
+manifest_name: David Klein · Freshly Ground Design
+manifest_short_name: David Klein
+manifest_lang: en
+manifest_background_color: white
+manifest_display: standalone
