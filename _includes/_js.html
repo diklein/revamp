@@ -17,6 +17,21 @@
       journalLink.className = "no-underline black-30";
       portfolioLink.className = "no-underline black-30";
    }
+
+   function runOnScroll() {
+     if (document.body.scrollTop >= 800 && window.innerWidth > 415) {
+       document.getElementById("modal-tweet").classList.add('db');
+     }
+   };
+   window.addEventListener("scroll", runOnScroll);
+
+   var closeButton = document.querySelector("#modal-close");
+   closeButton.addEventListener("click", closeModal);
+
+   function closeModal(event) {
+     document.getElementById("modal-tweet").classList.add('display-none');
+   }
+
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/js/zoom.js"></script>
