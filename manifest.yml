@@ -7,5 +7,5 @@ permalink: manifest.json
   "background_color": "#{{ site.manifest_background_color }}",
   "name": "{{ site.manifest_name }}",
   "short_name": "{{ site.manifest_short_name }}",
-  "display": "{{ site.manifest_display}}",
+  "display": "{{ site.manifest_display}}"
 }
