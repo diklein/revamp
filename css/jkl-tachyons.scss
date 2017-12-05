@@ -1203,7 +1203,7 @@ be set to the current text color.
 .bg-silver { background-color: #999; }
 .bg-light-silver { background-color: #aaa; }
 .bg-moon-gray { background-color: #ccc; }
-.bg-light-gray { background-color: #eee; }
+.bg-light-gray { background-color: #fcfcfc; }
 .bg-near-white { background-color: #f4f4f4; }
 .bg-white { background-color: #fff; }
 .bg-transparent { background-color: transparent; }
@@ -3026,15 +3026,12 @@ hr {
    height:2px;
    background:#f0f0f0
 }
-// .selected-on-page {
-//    padding-bottom: 19px;
-//    border-bottom: 1px solid black
-// }
 
 .hard-margin {
    margin: 0 auto;
 }
 
+// header underline fix - large screens
 @media screen and (min-width: 30em) {
    .selected-on-page {
       padding-bottom: 23px;
@@ -3043,22 +3040,81 @@ hr {
    .nav-list {
      padding: 7px 0 0 0;
    }
+   .avatar {
+
+   }
 }
 
+// header underline fix - small screens
 @media screen and (max-width: 29em) {
    .selected-on-page {
-      padding-bottom: 18px;
+      padding-bottom: 16px;
       border-bottom: 1px solid black
    }
+}
+
+// iPhone 6 Plus nav fix
+@media screen and (max-width: 555px) {
+  .avatar {
+    // margin-left: 1em;
+  }
+  .nav-fix ul {
+    -webkit-margin-before: 0;
+    -webkit-padding-start: 0;
+    -webkit-margin-after: 0;
+    padding-top: 8px;
+  }
+  .title-link {
+    padding-left: 4px;
+  }
+  .selected-on-page {
+    padding-bottom: 22px;
+  }
+}
+
+// iPhone 6 nav fix
+@media screen and (max-width: 480px) {
+  .avatar {
+    margin-left: 1em;
+  }
+  .nav-fix ul {
+    -webkit-margin-before: 0;
+    -webkit-padding-start: 0;
+    padding-top: 8px;
+  }
+  .title-link {
+    padding-left: 4px;
+  }
+  .selected-on-page {
+    padding-bottom: 24px;
+  }
+}
+
+// iPhone 5 nav fix
+@media screen and (max-width: 329px) {
+  .avatar {
+    display: none;
+  }
+  .nav-fix ul {
+    -webkit-margin-before: 0;
+    -webkit-padding-start: 0;
+    padding-top: 3px;
+  }
+  .title-link {
+    padding-left: 16px;
+  }
+  .selected-on-page {
+    padding-bottom: 16px;
+  }
 }
 
 ul {
    list-style: circle
 }
 
-.nav-fix {
-   padding-top: .7em
-}
+// .nav-fix {
+//    padding-top: .7em
+// }
 
 .btn-link-text:hover {
     color: rgba(255,255,255,0.8);
