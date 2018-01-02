@@ -21,8 +21,7 @@ permalink: /:year/:month/:title.html
 
 exclude: [Rakefile]
 
-gems:
-  - jekyll-paginate-v2
+gems: [jekyll-paginate-v2]
 
 # Pagination Settings
 pagination:
