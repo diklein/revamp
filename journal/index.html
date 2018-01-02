@@ -1,8 +1,30 @@
 ---
 title: Journal
 layout: default
+pagination:
+  enabled: true
 ---
 
 <section>
-  {% include _journal.html %}
+
+  {% for post in paginator.posts %}
+      {{ post.content }}
+      <div class="mw6 center">
+        <a href="{{ site.url }}/{{ post.url }}" class="link black-40 underline f4">Permalink</a>
+      </div>
+      <!-- <hr class="center mw4 mt6 mb0"/> -->
+      <div class="f4 center mt6 mb0 black-40 tc">*    *    *</div>
+  {% endfor %}
+
+  <div class="center mw6 pt6 mb6">
+    {% if paginator.total_pages > 1 %}
+        {% if paginator.previous_page %}
+            <a class="fl f6 btn-link-text fw5 br2 ph3 pv2 mt2 dib white bg-blue no-underline" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        {% endif %}
+        {% if paginator.next_page %}
+            <a class="fr f6 btn-link-text fw5 br2 ph3 pv2 mt2 dib white bg-blue no-underline" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        {% endif %}
+    {% endif %}
+  </div>
+
 </section>

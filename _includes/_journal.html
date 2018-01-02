@@ -16,10 +16,10 @@
     </li>
   {% endfor %} -->
 
-  {% assign postsByYear =
+  <!-- {% assign postsByYear =
       site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
   {% for year in postsByYear %}
-    <div class="f3 b bb b--black-20">{{ year.name }}</span></div>
+    <div class="f3 b bb bblack-20">{{ year.name }}</span></div>
       <ul class="pb4 pl0">
         {% for post in year.items %}
           <li class="list tl-ns f4 pt2 pb5 dim-subtle">
@@ -34,6 +34,6 @@
           </li>
         {% endfor %}
       </ul>
-  {% endfor %}
+  {% endfor %} -->
 
 </section>
