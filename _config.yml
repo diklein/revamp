@@ -5,7 +5,8 @@ url: "http://diklein.com"
 googleID: 39930910-6
 
 # Pagination variable for how many posts to show in a list
-# paginate: 5
+paginate: 5
+paginate_path: "/journal/page:num/"
 
 # Style of permalinks
 # permalink: pretty
@@ -21,17 +22,17 @@ permalink: /:year/:month/:title.html
 
 exclude: [Rakefile]
 
-gems: [jekyll-paginate-v2]
+gems: [jekyll-paginate]
 
 # Pagination Settings
-pagination:
-  enabled: true
-  per_page: 3
-  permalink: '/page/:num/'
-  title_suffix: ' - page :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+# pagination:
+#   enabled: true
+#   per_page: 3
+#   permalink: '/page/:num/'
+#   title_suffix: ' - page :num'
+#   limit: 0
+#   sort_field: 'date'
+#   sort_reverse: true
 
 sass:
     style: compressed
