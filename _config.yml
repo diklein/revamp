@@ -22,7 +22,10 @@ permalink: /:year/:month/:title.html
 
 exclude: [Rakefile]
 
-gems: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+
+# gems: [jekyll-paginate]
 
 # Pagination Settings
 # pagination:
