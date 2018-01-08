@@ -7,11 +7,11 @@ tag: journal
 description: "The final project for my General Assembly class is particularly cool. I built a dashboard for people to see my latest Instagram photo, Dribbble shot, and Tweet on one page."
 ---
 
-<section class="center mw6 pl3 pr3 pl0-ns pr0-ns pt6-ns lh-copy">
+<section class="center mw6 pl3 pr3 pl0-ns pr0-ns pt6-ns lh-copy pb4">
    <h1 class="f3 f2-ns lh-copy mb0 pt4 black-80">
       {{ page.title }}
    </h1>
-   <date class="db i black-30 pb4 f4" datetime="{{post.date}}">{{ page.date | date_to_long_string }}</date>
+   <date class="db i black-30 pb2 f4" datetime="{{post.date}}">{{ page.date | date_to_long_string }}</date>
    <div class="f4">
      <p>
        The final project for my <a href="https://generalassemb.ly" class="blue link underline">General Assembly</a> JavaScript class is particularly cool. I built a dashboard for people to see my latest <a href="https://www.instagram.com/diklein/" class="blue link underline">Instagram photo</a>, <a href="https://dribbble.com/diklein" class="blue link underline">Dribbble shot</a>, and <a href="https://twitter.com/diklein" class="blue link underline">Tweet</a> on one page using React, Node, Firebase, and Express. The project is live on <a href="http://dk-jsd4.herokuapp.com/final/" class="blue link underline">Heroku</a>.
@@ -19,8 +19,10 @@ description: "The final project for my General Assembly class is particularly co
      <p>
        Thank you Jordan, Kyle, and Arthur for pushing me to improve my code.
      </p>
-     <span class="b">Node.js</span>
-     <pre class="mt0 f6">
+     <div class="b pb2">Node.js</div>
+     <!-- <pre class="mt0 f6 ml0"> -->
+
+{% highlight javascript %}
 
 // SETUP
 // ---------------------------------------------------
@@ -51,11 +53,11 @@ app.listen(app.get('port'), function() {
 // TWITTER
 // ---------------------------------------------------
 var Twitter = require('twitter');
-var client = new Twitter({
-  consumer_key: 'NICE',
-  consumer_secret: 'TRY',
-  access_token_key: 'BRO',
-  access_token_secret: 'BROAGAIN'
+var client = new Twitter({
+  consumer_key: 'NICE',
+  consumer_secret: 'TRY',
+  access_token_key: 'BRO',
+  access_token_secret: 'BROAGAIN'
 });
 var params = {screen_name: 'diklein'};
 router.get('/tweets', function (req, res) {
@@ -96,10 +98,13 @@ router.get('/dribbble', function (req, res) {
   })
 });
 
+{% endhighlight %}
 
-     </pre>
-     <span class="b">JavaScript</span>
-     <pre class="mt0 f6">
+     <!-- </pre> -->
+     <div class="b pt4">JavaScript</div>
+     <!-- <pre class="mt0 f6"> -->
+
+{% highlight javascript %}
 
 // RENDER PARENT COMPONENT
 // --------------------------------------------------
@@ -358,8 +363,8 @@ function InstagramComponent(props) {
 const parent = document.querySelector(".parent");
 ReactDOM.render(&lt;RenderComponent /&gt;, parent);
 
-
-     </pre>
+{% endhighlight %}
+     <!-- </pre> -->
    </div>
    <!-- <div class="pt4 ttu f6 fw7">
       <a href="/journal" class="no-underline blue dim">← back to journal</a>
