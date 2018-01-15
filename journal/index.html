@@ -10,7 +10,7 @@ pagination:
   {% for post in paginator.posts %}
       {{ post.content }}
       <div class="mw6 center pl3 pl0-ns">
-        <a href="{{ site.url }}/{{ post.url }}" class="link black-40 underline f4">Permalink</a>
+        <a href="{{ site.url }}{{ post.url }}" class="link black-40 underline f4">Permalink</a>
       </div>
       <!-- <hr class="center mw4 mt6 mb0"/> -->
       <div class="f4 center mt6 mb0 black-40 tc">*    *    *</div>
